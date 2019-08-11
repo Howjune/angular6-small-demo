@@ -1,0 +1,13 @@
+.oc_parking li{
+	list-style: none;
+	float: none;
+}
+.oc_parking {
+}
+.oc_parking span{
+	margin: 2%;
+}
+.oc_parking button{
+
+	background: transparent;
+}

@@ -1,0 +1,13 @@
+.all_parking li{
+	list-style: none;
+	float: none;
+}
+.all_parking {
+}
+.all_parking span{
+	margin: 2%;
+}
+.all_parking button{
+
+	background: transparent;
+}

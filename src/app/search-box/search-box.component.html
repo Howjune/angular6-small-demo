@@ -1,0 +1,31 @@
+<div id="search-component">
+	
+	<h4>搜索车位</h4>
+	<label >
+		按编号：<input #searchById id="search-by-id" (keyup)="search(searchById.value)">
+	</label>
+
+</div>
+<div class="search_list_box">
+	<ul >
+	<li *ngFor="let PkSpace of pkLots$ | async" >
+
+	<a  *ngIf="PkSpace.E_time" routerLink="/em_parking/{{PkSpace.id}}">
+	<span>编号：{{PkSpace.id}}</span>
+	<span>进入时间：{{PkSpace.S_time}}</span>
+	<span>离开时间：{{PkSpace.E_time}}</span>
+	<span>费用：{{PkSpace.Fee}}</span>
+	</a>
+	<a  *ngIf="!PkSpace.E_time" routerLink="/oc_parking/{{PkSpace.id}}">
+	<span>编号：{{PkSpace.id}}</span>
+	<span>进入时间：{{PkSpace.S_time}}</span>
+	<span>离开时间：{{PkSpace.E_time}}</span>
+	<span>费用：{{PkSpace.Fee}}</span>
+	</a>
+	<button class="delete" title="delete pkLot" (click)="delete(PkSpace)">X</button>
+	</li>
+	</ul>
+</div>
+
+
+

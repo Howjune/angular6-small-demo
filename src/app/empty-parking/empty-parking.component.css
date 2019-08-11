@@ -1,0 +1,12 @@
+.em_parking li{
+	list-style: none;
+}
+.em_parking{
+
+}
+.em_parking span{
+	margin: 2%;
+}
+.em_parking button{
+	background: transparent;
+}

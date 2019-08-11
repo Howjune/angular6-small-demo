@@ -1,0 +1,30 @@
+ <nz-table #nzTable [nzData]="displayData">
+      <thead>
+        <tr>
+          <th>
+            Name
+            <nz-dropdown nzTrigger="click" [nzClickHide]="false">
+              <i class="anticon anticon-smile-o ant-table-filter-icon" nz-dropdown></i>
+              <div class="custom-filter-dropdown">
+                <input type="text" nz-input placeholder="Search name" [(ngModel)]="searchValue">
+                <button nz-button [nzType]="'primary'" (click)="search()">Search</button>
+              </div>
+            </nz-dropdown>
+          </th>
+          <th>进入日期</th>
+          <th>进入时刻</th>
+          <th>离开日期</th>
+          <th>离开时刻</th>
+          <th nzShowFilter [nzFilters]="filterAddressArray" (nzFilterChange)="filterAddressChange($event)">费用</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of nzTable.pkLots">
+          <td>{{data.id}}</td>
+          <td>{{data.S_date}}</td>
+          <td>{{data.S_time}}</td>
+          <td>{{data.E_date}}</td>
+          <td>{{data.E_time}}</td>
+        </tr>
+      </tbody>
+    </nz-table>
